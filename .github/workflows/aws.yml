@@ -32,7 +32,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Deploy to EC2 Instance 1
-      uses: appleboy/scp-action@v0.1.7
+      uses: appleboy/scp-action
       with:
         host: ${{ secrets.EC2_HOST1 }}
         username: ${{ secrets.EC2_USERNAME }}
@@ -41,7 +41,7 @@ jobs:
         target: "/usr/share/nginx/html/"
 
     - name: Deploy to EC2 Instance 2
-      uses: aappleboy/scp-action@v0.1.7
+      uses: aappleboy/scp-action
       with:
         host: ${{ secrets.EC2_HOST2 }}
         username: ${{ secrets.EC2_USERNAME }}
