@@ -31,21 +31,22 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
-    - name: Deploy to EC2 Instance 1
-      uses: appleboy/scp-action
+    - name: Deploy to EC2 Instance one
+      uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.EC2_HOST1 }}
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
         source: "application/index.html"
         target: "/usr/share/nginx/html/"
 
-    - name: Deploy to EC2 Instance 2
-      uses: aappleboy/scp-action
+    - name: Deploy to EC2 Instance two
+      uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.EC2_HOST2 }}
         username: ${{ secrets.EC2_USERNAME }}
+        port: 22
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "application/index.html"
         target: "/usr/share/nginx/html/"
-
