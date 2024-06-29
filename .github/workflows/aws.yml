@@ -31,9 +31,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
-    # - name: Install SSH Client
-    #   run: sudo yum install -y openssh-client
-
     - name: Deploy to EC2 Instance 1
       uses: appleboy/scp-action@v0.1.7
       with:
