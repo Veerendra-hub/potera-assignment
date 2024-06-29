@@ -39,7 +39,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         source: "application/index.html"
-        target: "/usr/share/nginx/html/"
+        target: "/home/ec2-user/nginx/html/"
 
     - name: Deploy to EC2 Instance two
       uses: appleboy/scp-action@v0.1.7
@@ -49,4 +49,4 @@ jobs:
         port: 22
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "application/index.html"
-        target: "/usr/share/nginx/html/"
+        target: "/home/ec2-user/nginx/html/"
